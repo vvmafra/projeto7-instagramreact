@@ -1,0 +1,1 @@
+//onde cada item será um componente diferente, o Story
