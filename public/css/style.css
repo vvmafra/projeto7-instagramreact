@@ -282,6 +282,7 @@
      margin-top: 57px;
      margin-left: 29px;
      width: 293px;
+     flex-direction: column;
 }
 
 .profile {
@@ -310,6 +311,7 @@
      font-size: 12px;
      width: 293px;
 }
+
 
 .sugestoes-voce {
      color: #8e8e8e;
@@ -349,6 +351,10 @@
      font-weight: bold;
      font-size: 14px;
      color: #262626;
+}
+
+.profile ion-icon {
+     margin-left: 10px;
 }
 
 .segue-voce {
@@ -394,93 +400,4 @@
 .topo-mobile img {
      width: 103px;
      height: 29px;
-}
-
-@media (min-width: 614px) and (max-width: 934px) {
-     .sidebar,
-     .background-topo {
-          display: none;
-     }
-     .menu-topo {
-          position: fixed;
-          top: 0;
-          left: 0;
-          padding: 16px;
-          width: 100%;
-          border: 1px solid #dbdbdb;
-     }
-     .conteudo {
-          width: 614px;
-     }
-}
-
-@media (max-width: 613px) {
-     .menu-topo {
-          position: fixed;
-          top: 0;
-          left: 0;
-          padding: 16px;
-          width: 100%;
-          border: 1px solid #dbdbdb;
-     }
-     .linha,
-     .paper-plane,
-     .compass,
-     .heart,
-     .person,
-     .seta,
-     .sidebar,
-     .menu-topo {
-          display: none;
-     }
-
-     .stories {
-          border: none;
-          background-color: #e5e5e5;
-     }
-
-     .conteudo,
-     .feed,
-     .posts {
-          width: 100%;
-     }
-     .barra-inferior {
-          height: 54px;
-          width: 100%;
-          padding: 18px;
-          display: flex;
-          flex-direction: row;
-          justify-content: space-between;
-          align-items: center;
-          box-sizing: border-box;
-          background-color: #ffffff;
-          border: 1px solid #dbdbdb;
-          position: fixed;
-          bottom: 0;
-          left: 0;
-     }
-     .stories {
-          padding: 0px 20px;
-          border-radius: 3px;
-          margin-top: 10px;
-     }
-     .posts {
-          margin-top: 7px;
-     }
-     .topo-mobile {
-          height: 54px;
-          width: 100%;
-          padding: 18px;
-          display: flex;
-          flex-direction: row;
-          justify-content: space-between;
-          align-items: center;
-          box-sizing: border-box;
-          background-color: #ffffff;
-          border: 1px solid #dbdbdb;
-          position: fixed;
-          top: 0;
-          left: 0;
-          z-index: 10;
-     }
 }

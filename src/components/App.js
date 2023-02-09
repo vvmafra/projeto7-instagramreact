@@ -8,10 +8,13 @@ import Usuario from "./Usuario"
 
 function App() {
     return (
-        <div class="pagina">
-            <div class="background-topo"></div>
-            <div class="conteudo">
+        <div className="pagina">
+            <div className="background-topo"></div>
+            <div className="conteudo">
                 <NavBar />
+                <Corpo />
+                <SideBar />
+
             </div>
         </div>
     )
