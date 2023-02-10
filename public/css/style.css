@@ -301,6 +301,14 @@
      margin-right: 17px;
      border: 1px solid #ffffff;
 }
+
+.profile .prop-usuario{
+     display: flex;
+     flex-direction: row;
+     align-items: center;
+}
+
+
 .sugestoes {
      margin-top: 24px;
      margin-bottom: 18px;
@@ -355,6 +363,11 @@
 
 .profile ion-icon {
      margin-left: 10px;
+}
+
+.profile button {
+     background-color: transparent;
+     border: none;
 }
 
 .segue-voce {
