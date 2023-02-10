@@ -1,4 +1,12 @@
 export default function Sugestoes() {
+    const sugestoesVoce = [
+        { imagemSugestao: "assets/Green.jpg", usuarioSugestao: "Jalen.Green", segue: "Segue você" },
+        { imagemSugestao: "assets/ney.jpg", usuarioSugestao: "menino.ney", segue: "Novo no instagram" },
+        { imagemSugestao: "assets/fluminense.jpg", usuarioSugestao: "fluzão", segue: "Segue você" },
+        { imagemSugestao: "assets/henry.jpg", usuarioSugestao: "T_Henry", segue: "Segue você" },
+        { imagemSugestao: "assets/Martinelli.jpg", usuarioSugestao: "MartinelliG", segue: "Novo no instagram" },
+    ]
+
     return (
         <div class="todas-sugestoes">
             <div class="sugestoes">
@@ -8,66 +16,24 @@ export default function Sugestoes() {
                 <div class="ver-tudo"><span class="negrito">Ver tudo</span>
                 </div>
             </div>
-            <div class="container-segue-seguir">
-                <div class="container-segue-voce">
-                    <img src="assets/Green.jpg" />
-                    <div class="usuario-segue-voce">
-                        <p class="usuario">Jalen.Green</p>
-                        <p class="segue-voce">Segue você</p>
-                    </div>
-                </div>
-                <div class="seguir">
-                    Seguir
-                </div>
+            {sugestoesVoce.map((s) => <Sugestao imagemSugestao={s.imagemSugestao} usuarioSugestao={s.usuarioSugestao} segue={s.segue} />)}
+        </div>
+    )
+}
+
+function Sugestao(props) {
+    return (
+    <div class="container-segue-seguir">
+        <div class="container-segue-voce">
+            <img src={props.imagemSugestao} />
+            <div class="usuario-segue-voce">
+                <p class="usuario">{props.usuarioSugestao}</p>
+                <p class="segue-voce">{props.segue}</p>
             </div>
-            <div class="container-segue-seguir">
-                <div class="container-segue-voce">
-                    <img src="assets/ney.jpg" />
-                    <div class="usuario-segue-voce">
-                        <p class="usuario">menino_ney</p>
-                        <p class="segue-voce">Segue você</p>
-                    </div>
-                </div>
-                <div class="seguir">
-                    Seguir
-                </div>
-            </div>
-            <div class="container-segue-seguir">
-                <div class="container-segue-voce">
-                    <img src="assets/fluminense.jpg" />
-                    <div class="usuario-segue-voce">
-                        <p class="usuario">fluzão</p>
-                        <p class="segue-voce">Segue você</p>
-                    </div>
-                </div>
-                <div class="seguir">
-                    Seguir
-                </div>
-            </div>
-            <div class="container-segue-seguir">
-                <div class="container-segue-voce">
-                    <img src="assets/henry.jpg" />
-                    <div class="usuario-segue-voce">
-                        <p class="usuario">T_Henry</p>
-                        <p class="segue-voce">Segue você</p>
-                    </div>
-                </div>
-                <div class="seguir">
-                    Seguir
-                </div>
-            </div>
-            <div class="container-segue-seguir">
-                <div class="container-segue-voce">
-                    <img src="assets/Martinelli.jpg" />
-                    <div class="usuario-segue-voce">
-                        <p class="usuario">MartinelliGabriel</p>
-                        <p class="segue-voce">Segue você</p>
-                    </div>
-                </div>
-                <div class="seguir">
-                    Seguir
-                </div>
-                </div>
-            </div>
+        </div>
+        <div class="seguir">
+            Seguir
+        </div>
+    </div>
     )
 }
