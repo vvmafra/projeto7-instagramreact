@@ -69,7 +69,7 @@ function Post(props) {
             </div>
 
             <img
-                data-test="post-image like-post"
+                data-test="post-image"
                 class="imagem-post"
                 onClick={curtidaFoto}
                 src={props.postImagem}
