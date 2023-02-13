@@ -20,7 +20,7 @@ export default function Usuario() {
 
     return (
         <div class="profile">
-            <div data-test="profile-image" class="prop-usuario" onClick={trocarFoto}>
+            <div class="prop-usuario" onClick={trocarFoto}>
             <PropsUsuario  imagem={fotoUsuario} nome={nomeUsuario} />
             </div>
             <button onClick={trocarNome} data-test="edit-name"><ion-icon name="pencil" ></ion-icon></button>
@@ -32,7 +32,7 @@ function PropsUsuario(props) {
 
     return (
         <>
-            <img src={props.imagem} />
+            <img data-test="profile-image" src={props.imagem} />
             <div data-test="name"><span class="negrito" >{props.nome}</span></div>
         </>
     )
