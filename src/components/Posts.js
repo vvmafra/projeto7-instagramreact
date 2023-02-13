@@ -1,8 +1,10 @@
+import { useState } from "react"
+
 export default function Posts() {
     const postsObj = [
-        { profileImagem: "/assets/Ronaldinho_in_2019.jpg", nomeProfile: "ronaldinho", postImagem: "/assets/Ronaldinho-hang.jpg", imgCurtido:"assets/dog.jpg" , curtido: "dog", numCurtidas: "3.902.008" },
-        { profileImagem: "/assets/Jokic.jpg", nomeProfile: "Jokic", postImagem: "/assets/tigre-taco.jpg", imgCurtido:"/assets/logo-rockets.jpg", curtido: "Rockets", numCurtidas: "92.783" },
-        { profileImagem: "/assets/stars.jpg", nomeProfile: "Stars__", postImagem: "/assets/supertaco.jpg", imgCurtido:"assets/tubo.jpg", curtido: "waves_rider", numCurtidas: "9.721" }
+        { profileImagem: "/assets/Ronaldinho_in_2019.jpg", nomeProfile: "ronaldinho", postImagem: "/assets/Ronaldinho-hang.jpg", imgCurtido:"assets/dog.jpg" , curtido: "dog", numCurtidas: Number(902.008) },
+        { profileImagem: "/assets/Jokic.jpg", nomeProfile: "Jokic", postImagem: "/assets/tigre-taco.jpg", imgCurtido:"/assets/logo-rockets.jpg", curtido: "Rockets", numCurtidas: Number(92.783) },
+        { profileImagem: "/assets/stars.jpg", nomeProfile: "Stars__", postImagem: "/assets/supertaco.jpg", imgCurtido:"assets/tubo.jpg", curtido: "waves_rider", numCurtidas: Number(9.721) }
     ]
     return (
 
@@ -13,6 +15,42 @@ export default function Posts() {
 }
 
 function Post(props) {
+    const [curtiu, setCurtiu] = useState("heart-outline")
+    const [nLikes, setNLikes] = useState(props.numCurtidas)
+    const [salvado, setSalvado] = useState("bookmark-outline")
+    const [corLike, setCorLike] = useState("")
+
+
+    function curtida() {
+        if (curtiu === "heart-outline") {
+            setCurtiu("heart");
+            setNLikes(props.numCurtidas + 0.001)
+            setCorLike("red")
+        } else {
+            setCurtiu("heart-outline")
+            setNLikes(props.numCurtidas)
+            setCorLike("")
+        }
+    }
+
+    function curtidaFoto() {
+        if (curtiu === "heart-outline") {
+            setCurtiu("heart");
+            setNLikes(props.numCurtidas + 0.001)
+        }
+    }
+
+    function salvar() {
+        if (salvado === "bookmark-outline") {
+            setSalvado("bookmark");
+        } else {
+            setSalvado("bookmark-outline");
+        }
+    }
+
+
+
+
     return (
         <div class="post">
             <div class="titulo-post">
@@ -31,12 +69,15 @@ function Post(props) {
 
             <img
                 class="imagem-post"
+                onClick={curtidaFoto}
                 src={props.postImagem}
             />
             <div class="curtidas-post">
                 <div class="curtidas-post-esquerda">
                     <ion-icon
-                        name="heart-outline"
+                        onClick={curtida}
+                        name={curtiu}
+                        style={{color: (corLike)}}
                     ></ion-icon>
                     <ion-icon
                         name="chatbubble-outline"
@@ -48,7 +89,8 @@ function Post(props) {
 
                 <div class="curtidas-post-direita">
                     <ion-icon
-                        name="bookmark-outline"
+                        onClick={salvar}
+                        name={salvado}
                     ></ion-icon>
                 </div>
 
@@ -61,7 +103,7 @@ function Post(props) {
                     <span class="negrito"> {props.curtido} </span>
                     e
                     <span class="negrito">
-                        outras {props.numCurtidas} pessoas
+                        outras {nLikes} pessoas
                     </span>
                 </p>
             </div>
