@@ -37,6 +37,7 @@ function Post(props) {
         if (curtiu === "heart-outline") {
             setCurtiu("heart");
             setNLikes(props.numCurtidas + 0.001)
+            setCorLike("red")
         }
     }
 
@@ -68,7 +69,7 @@ function Post(props) {
             </div>
 
             <img
-                data-test="post-image"
+                data-test="post-image like-post"
                 class="imagem-post"
                 onClick={curtidaFoto}
                 src={props.postImagem}
