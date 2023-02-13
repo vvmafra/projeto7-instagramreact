@@ -13,9 +13,9 @@ export default function Usuario() {
 
     function trocarFoto() {
         const novaFoto = prompt("Insira link da nova foto")
-        if (novaFoto !== "" || novaFoto !== "undefined") {
+        if (novaFoto !== "") {
             setFotoUsuario(novaFoto)
-        }
+        } 
     }
 
     return (
