@@ -2,7 +2,7 @@ import { useState } from "react"
 
 export default function Usuario() {
     const [nomeUsuario, setNomeUsuario] = useState("Username")
-    const [fotoUsuario, setFotoUsuario] = useState("/assets/dog.jpg")
+    const [fotoUsuario, setFotoUsuario] = useState("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRvrfi6fs9h09rEEkSRPckTTuw7bnu7h8eMYA&usqp=CAU")
 
     function trocarNome() {
         const novoNome = prompt("Qual o novo nome do usuário")
@@ -13,7 +13,7 @@ export default function Usuario() {
 
     function trocarFoto() {
         const novaFoto = prompt("Insira link da nova foto")
-        if (novaFoto !== "") {
+        if (novaFoto !== "" || novaFoto !== "undefined") {
             setFotoUsuario(novaFoto)
         }
     }
