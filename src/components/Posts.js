@@ -52,7 +52,7 @@ function Post(props) {
 
 
     return (
-        <div class="post">
+        <div class="post" data-test="post">
             <div class="titulo-post">
                 <div class="titulo-post-esquerdo">
                     <img
@@ -68,6 +68,7 @@ function Post(props) {
             </div>
 
             <img
+                data-test="post-image"
                 class="imagem-post"
                 onClick={curtidaFoto}
                 src={props.postImagem}
@@ -75,6 +76,7 @@ function Post(props) {
             <div class="curtidas-post">
                 <div class="curtidas-post-esquerda">
                     <ion-icon
+                        data-test="like-post"
                         onClick={curtida}
                         name={curtiu}
                         style={{color: (corLike)}}
@@ -89,6 +91,7 @@ function Post(props) {
 
                 <div class="curtidas-post-direita">
                     <ion-icon
+                        data-test="save-post"
                         onClick={salvar}
                         name={salvado}
                     ></ion-icon>
@@ -102,7 +105,7 @@ function Post(props) {
                     Curtido por
                     <span class="negrito"> {props.curtido} </span>
                     e
-                    <span class="negrito">
+                    <span class="negrito" data-test="likes-number">
                         outras {nLikes} pessoas
                     </span>
                 </p>
